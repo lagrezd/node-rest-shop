@@ -1,10 +1,19 @@
 const express = require('express');
 const router = express.Router();
 
+Product = require('../models/product');
+
 router.get('/', (req, res, next) => {
-    res.status(200).json({
-        message: 'Handling GET requests to /products'
+    Product.getProduct(function(err, products) {
+        if (err) {
+            throw err;
+        } else {
+            res.status(200).json(products);
+        }
     });
+    /*res.status(200).json({
+        message: 'Handling GET requests to /products'
+    });*/
 });
 
 router.post('/', (req, res, next) => {
