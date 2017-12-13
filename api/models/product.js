@@ -14,3 +14,5 @@ const Product = module.exports = mongoose.model('Product', productSchema);
 module.exports.getProduct = function (callback, limit) {
     Product.find(callback).limit(limit);
 }
+
+
