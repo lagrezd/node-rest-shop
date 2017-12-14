@@ -31,8 +31,9 @@ app.use((req, res, next) => {
  * collections: products, orders
  * object: name
  */
-mongoose.connect('mongodb://localhost/shop');
-const db = mongoose.connection;
+mongoose.connect('mongodb://localhost/shop', {
+    useMongoClient: true
+});
 
 // Routes which should handle requests
 app.use('/products', productRoutes);
