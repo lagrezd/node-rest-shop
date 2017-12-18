@@ -34,6 +34,7 @@ app.use((req, res, next) => {
 mongoose.connect('mongodb://localhost/shop', {
     useMongoClient: true
 });
+mongoose.Promise = global.Promise;
 
 // Routes which should handle requests
 app.use('/products', productRoutes);
