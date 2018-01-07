@@ -1,0 +1,6 @@
+{
+  "env": {
+    "MONGO_PW": "shop",
+    "JWT_KEY": "secret"
+  }
+}

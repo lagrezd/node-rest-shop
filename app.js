@@ -33,7 +33,7 @@ app.use((req, res, next) => {
  * collections: products, orders
  * object: name
  */
-mongoose.connect('mongodb://localhost/shop', {
+mongoose.connect('mongodb://localhost/' + process.env.MONGO_PW, {
     useMongoClient: true
 });
 mongoose.Promise = global.Promise;
